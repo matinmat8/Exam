@@ -1,7 +1,6 @@
 from django.contrib.auth.models import User
 from django.db import models
 
-
 TYPE_OF_TEST = (
     ('Descriptive', 'descriptive'),
     ('Test', 'test'),
@@ -19,4 +18,11 @@ class Exam(models.Model):
     exam_url = models.URLField()
     start_time = models.DateTimeField()
     end_time = models.DateTimeField()
-    # students = models.ManyToManyField(student_model)
+
+
+class Student(models.Model):
+    exam = models.ForeignKey(Exam, on_delete=models.CASCADE)
+    first_name = models.CharField(max_length=250)
+    last_name = models.CharField(max_length=250)
+    email = models.EmailField()
+    score = models.IntegerField()
