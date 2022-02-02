@@ -20,6 +20,17 @@ class Exam(models.Model):
     end_time = models.DateTimeField()
 
 
+class Question(models.Model):
+    exam = models.ForeignKey(Exam, on_delete=models.CASCADE)
+    question = models.CharField(max_length=450)
+    option_1 = models.CharField(max_length=250)
+    option_2 = models.CharField(max_length=250)
+    option_3 = models.CharField(max_length=250)
+    option_4 = models.CharField(max_length=250)
+    answer = models.CharField(
+        max_length=25, choices=(('o_1', option_1), ('o_2', option_2), ('o_3', option_3), ('o_4', option_4)))
+
+
 class Student(models.Model):
     exam = models.ForeignKey(Exam, on_delete=models.CASCADE)
     first_name = models.CharField(max_length=250)
