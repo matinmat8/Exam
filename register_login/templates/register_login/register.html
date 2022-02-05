@@ -1,0 +1,11 @@
+{% extends 'exam/base.html' %}
+
+{% block content %}
+    <div class="container-sm mt-3">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="btn btn-dark" type="submit"> Sign Up </button>
+        </form>
+    </div>
+{% endblock %}
