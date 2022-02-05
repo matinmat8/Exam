@@ -1,6 +1,9 @@
 from django.contrib.auth.models import User
 from django.db import models
 
+from django.dispatch import receiver
+from django.db.models.signals import post_save
+
 TYPE_OF_TEST = (
     ('Descriptive', 'descriptive'),
     ('Test', 'test'),
@@ -18,6 +21,13 @@ class Exam(models.Model):
     exam_url = models.URLField()
     start_time = models.DateTimeField()
     end_time = models.DateTimeField()
+
+
+# Filling in the exam_url field
+@receiver(post_save, sender=Exam)
+def add_url(sender, instance, **kwargs):
+    url = 'http://127.0.0.1:8000/exam/%s/' % instance.id
+    instance.exam_url = url
 
 
 class Question(models.Model):
