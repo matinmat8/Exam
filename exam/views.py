@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.utils.decorators import method_decorator
-from django.views.generic import View, ListView
+from django.views.generic import View, ListView, DetailView
 from django.contrib.auth.decorators import login_required
 
 from .forms import AddExamForm
@@ -47,3 +47,7 @@ class ExamList(ListView):
         obj = super().get_queryset()
         user = self.request.user
         return obj.filter(user=user)
+
+
+class ExamDetail(DetailView):
+    model = Exam
