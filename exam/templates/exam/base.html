@@ -5,8 +5,17 @@
     <title>{% block title %}Title{% endblock %}</title>
 </head>
 <body>
+  {% if user.is_authenticated %}
+    <a href="{% url 'register_login:logout' %}">LogOut</a>
+  {% else %}
+    <a href="{% url 'register_login:login' %}">Login</a>
+  {% endif %}
+
+    <a href="{% url 'exam:add_name' %}">Make an exam</a>
+
+    <a href="{% url 'exam:exam_list' %}">Exams</a>
   {% block content %}
-    <h3>Exam System</h3>
+    <h2>Exam Online System</h2>
   {% endblock content %}
 
   <script>
