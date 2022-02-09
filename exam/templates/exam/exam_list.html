@@ -1,0 +1,9 @@
+{% extends 'exam/base.html' %}
+
+{% block content %}
+
+{% for obj in object_list %}
+    <a href="#">{{ obj.title }}</a>
+{% endfor %}
+
+{% endblock %}

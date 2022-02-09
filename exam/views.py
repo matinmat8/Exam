@@ -1,5 +1,7 @@
-from django.shortcuts import render
-from django.views.generic import View
+from django.shortcuts import render, redirect
+from django.utils.decorators import method_decorator
+from django.views.generic import View, ListView
+from django.contrib.auth.decorators import login_required
 
 from .forms import AddExamForm
 from .models import Exam
@@ -33,4 +35,15 @@ class AddExam(View):
             end_time=get_field('end_time', request),
         )
         obj.save()
-        return render(request=request, template_name='exam/base.html')
+        return redirect('exam/exam_list')
+
+
+@method_decorator(login_required, name='dispatch')
+class ExamList(ListView):
+    model = Exam
+    template_name = 'exam/exam_list.html'
+
+    def get_queryset(self):
+        obj = super().get_queryset()
+        user = self.request.user
+        return obj.filter(user=user)
