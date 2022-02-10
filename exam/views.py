@@ -3,7 +3,7 @@ from django.utils.decorators import method_decorator
 from django.views.generic import View, ListView, DetailView
 from django.contrib.auth.decorators import login_required
 
-from .forms import AddExamForm
+from .forms import AddExamForm, AddQsForm
 from .models import Exam
 
 # Getting form fields
@@ -35,7 +35,7 @@ class AddExam(View):
             end_time=get_field('end_time', request),
         )
         obj.save()
-        return redirect('exam/exam_list')
+        return redirect('exam:exam_detail', pk=obj.pk)  # Redirecting to Exam detail page
 
 
 @method_decorator(login_required, name='dispatch')
@@ -51,3 +51,8 @@ class ExamList(ListView):
 
 class ExamDetail(DetailView):
     model = Exam
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data()
+        context['form'] = AddQsForm()
+        return context
