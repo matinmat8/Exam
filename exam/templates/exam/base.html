@@ -7,12 +7,19 @@
   <meta charset="UTF-8">
   <title>{% block title %}Title{% endblock %}</title>
   <link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/responsive.css' %}">
 </head>
 
 <body>
     <header>
         <nav class="center-items">
             <div class="links center-items">
+              <svg class="open" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">                
+                  <rect class="menu-item" x="0" y="10"/>
+                  <rect class="menu-item" x="0" y="44"/>
+                  <rect class="menu-item" x="0" y="77"/>
+              </svg>
+
                 <a href="{% url 'exam:index' %}">Home</a>
                 <a href="{% url 'exam:add_name' %}">Make an exam</a>
                 <a href="{% url 'exam:exam_list' %}">Exams</a>
@@ -33,6 +40,14 @@
 
         </nav>
     </header>
+
+    <aside class="menu">
+        <a href="{% url 'exam:index' %}">Home</a>
+        <a href="{% url 'exam:add_name' %}">Make an exam</a>
+        <a href="{% url 'exam:exam_list' %}">Exams</a>
+    </aside>
+
+    <div id="prevent"></div>
         
     <main>
         {% block content %}
@@ -41,11 +56,8 @@
 
         {% endblock content %}
     </main>
-    
-    <script>
-      {% block javascript %}
-      {% endblock %}
-    </script>
+
+    <script type="text/javascript" src="{% static 'script/app.js' %}"></script>
 </body>
 
 </html>

@@ -10,6 +10,10 @@
     font-family: ibm-plex;
 }
 
+:root {
+    --animate: all 180ms ease-in 0s;
+}
+
 .center-items {
     display: flex;
     justify-content: center;
@@ -38,12 +42,61 @@ header > nav.center-items {
     padding: 0 15px;
 }
 
-header > nav a {
+a {
     color: #FFF;
     text-decoration: none;
-    font-size: 20px;
+}
+
+header > nav a {
+    font-size: 23px;
+    font-weight: 600;
 }
 
 header > nav > div {
     gap: 20px;
+}
+
+.links .open {
+    display: none;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.links .open .menu-item {
+    width: 100px;
+    height: 13px;
+    fill: #FFF;
+    rx: 6.5px;
+    ry: 6.5px;
+}
+
+#prevent {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+aside.menu {
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: -180px;
+    width: 180px;
+    background-color: #000A;
+    flex-direction: column;
+    gap: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 15px;
+    transition: var(--animate);
+    z-index: 2;
+}
+
+aside.menu a {
+    font-size: 20px;
 }
