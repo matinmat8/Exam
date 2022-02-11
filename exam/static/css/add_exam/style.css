@@ -53,13 +53,13 @@ main > form select:focus {
 }
 
 .date .placeholder {
-    padding: 0 80% 0 5px;
+    right: 10px;
     cursor: default;
-    transition: left 180ms ease-in 0s, top 180ms ease-in 0s, transform 180ms ease-in 0s, font-size 180ms ease-in 0s;
 }
 
 .input .placeholder.active,
 .date .placeholder.active {
+    right: unset;
     top: -13px;
     left: 5px;
     transform: none;
