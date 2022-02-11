@@ -3,7 +3,7 @@ from django.utils.decorators import method_decorator
 from django.views.generic import View, ListView, DetailView
 from django.contrib.auth.decorators import login_required
 
-from .forms import AddExamForm, AddQsForm
+# from .forms import AddExamForm, AddQsForm
 from .models import Exam
 
 # Getting form fields
@@ -19,8 +19,7 @@ class AddExam(View):
     template_name = 'exam/add_exam.html'
 
     def get(self, *args, **kwargs):
-        form = AddExamForm()
-        return render(request=self.request, template_name=self.template_name, context={'form': form})
+        return render(request=self.request, template_name=self.template_name)
 
     def post(self, *args, **kwargs):
         request = self.request
@@ -52,7 +51,7 @@ class ExamList(ListView):
 class ExamDetail(DetailView):
     model = Exam
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data()
-        context['form'] = AddQsForm()
-        return context
+    # def get_context_data(self, **kwargs):
+    #     context = super().get_context_data()
+    #     context['form'] = AddQsForm()
+    #     return context
