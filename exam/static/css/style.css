@@ -1,0 +1,49 @@
+@font-face {
+    font-family: ibm-plex;
+    src: url("./ibm\ plex\ sans.woff2");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: ibm-plex;
+}
+
+.center-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+body {
+    padding-top: 60px;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+header > nav.center-items {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #0096C7;
+    justify-content: space-between;
+    padding: 0 15px;
+}
+
+header > nav a {
+    color: #FFF;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+header > nav > div {
+    gap: 20px;
+}
