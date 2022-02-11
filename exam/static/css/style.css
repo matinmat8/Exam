@@ -12,6 +12,8 @@
 
 :root {
     --animate: all 180ms ease-in 0s;
+    --title-color: #0096C7;
+    --success-color: #38B000;
 }
 
 .center-items {
@@ -23,6 +25,11 @@
 
 body {
     padding-top: 60px;
+}
+
+button {
+    cursor: pointer;
+    border: none;
 }
 
 header {
@@ -37,7 +44,7 @@ header > nav.center-items {
     left: 0;
     width: 100%;
     height: 60px;
-    background-color: #0096C7;
+    background-color: var(--title-color);
     justify-content: space-between;
     padding: 0 15px;
 }

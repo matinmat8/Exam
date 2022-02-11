@@ -1,0 +1,80 @@
+main {
+    padding-top: 70px;
+    width: 100%;
+}
+
+main > form {
+    width: 100%;
+    height: 100%;
+    gap: 30px;
+}
+
+.input,
+main > form > input {
+    width: 45%;
+    height: 45px;
+}
+
+.input {
+    position: relative;
+}
+
+main > form * {
+    font-size: 18px;
+}
+
+.input input {
+    width: 100%;
+    height: 100%;
+}
+
+.input input,
+main > form > input {
+    border: 1px solid #000;
+    padding: 0 30px;
+}
+
+main > form input:focus,
+main > form select:focus {
+    outline: 3px solid #1d9ee4be;
+}
+
+.input .placeholder {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 30px;
+    cursor: text;
+}
+
+.control {
+    width: calc(90% + 30px);
+    gap: 30px;
+    justify-content: flex-start;
+}
+
+.control select {
+    border-radius: none;
+    border: none;
+    background-color: #00B4D8;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.control select option[selected] {
+    display: none;
+}
+
+.control * {
+    width: 200px;
+    height: 45px;
+}
+
+.control button {
+    background-color: var(--success-color);
+}
+
+.control select option {
+    background-color: #FFF;
+}
