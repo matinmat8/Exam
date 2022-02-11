@@ -13,10 +13,6 @@ main > form {
 .date {
     width: 45%;
     height: 45px;
-}
-
-.input,
-.date {
     position: relative;
 }
 
