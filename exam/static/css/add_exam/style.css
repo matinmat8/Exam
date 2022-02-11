@@ -45,6 +45,16 @@ main > form select:focus {
     transform: translateY(-50%);
     left: 30px;
     cursor: text;
+    transition: var(--animate);
+    background-color: #FFF;
+}
+
+.input .placeholder.active {
+    top: -13px;
+    left: 5px;
+    transform: none;
+    font-size: 20px;
+    padding: 0 5px;
 }
 
 .control {
