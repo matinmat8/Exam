@@ -1,0 +1,9 @@
+@media screen and (max-width: 600px) {
+    .links a {
+        display: none;
+    }
+
+    .links .open {
+        display: block;
+    }
+}
