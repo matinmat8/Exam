@@ -10,12 +10,13 @@ main > form {
 }
 
 .input,
-main > form > input {
+.date {
     width: 45%;
     height: 45px;
 }
 
-.input {
+.input,
+.date {
     position: relative;
 }
 
@@ -23,13 +24,14 @@ main > form * {
     font-size: 18px;
 }
 
-.input input {
+.input input,
+.date input {
     width: 100%;
     height: 100%;
 }
 
 .input input,
-main > form > input {
+.date input {
     border: 1px solid #000;
     padding: 0 30px;
 }
@@ -39,7 +41,8 @@ main > form select:focus {
     outline: 3px solid #1d9ee4be;
 }
 
-.input .placeholder {
+.input .placeholder,
+.date .placeholder {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -49,7 +52,8 @@ main > form select:focus {
     background-color: #FFF;
 }
 
-.input .placeholder.active {
+.input .placeholder.active,
+.date .placeholder.active {
     top: -13px;
     left: 5px;
     transform: none;
