@@ -49,15 +49,15 @@
         <a href="{% url 'exam:exam_list' %}">Exams</a>
     </aside>
 
-    <div id="prevent"></div>
-        
     <main>
         {% block content %}
-
-            <!-- <h2>Exam Online System</h2> -->
-
+        
+        <!-- <h2>Exam Online System</h2> -->
+        
         {% endblock content %}
     </main>
+    
+    <div id="prevent"></div>
 
     <script type="text/javascript" src="{% static 'script/app.js' %}"></script>
 

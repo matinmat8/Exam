@@ -1,5 +1,5 @@
 main {
-    padding-top: 70px;
+    padding: 70px 0;
     width: 100%;
 }
 
@@ -70,10 +70,6 @@ main > form select:focus {
     font-size: 18px;
     cursor: pointer;
     padding: 10px;
-}
-
-.control select option[selected] {
-    display: none;
 }
 
 .control * {

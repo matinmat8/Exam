@@ -4,6 +4,7 @@
 {% block selfLink %}
 
     <link rel="stylesheet" type="text/css" href="{% static 'css/add_exam/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/add_exam/responsive.css' %}">
 
 {% endblock selfLink %}
 
@@ -22,7 +23,7 @@
         </div>
 
         <div class="input">
-            <input type="text" name="exam_duration" required>
+            <input type="number" name="exam_duration" required>
             <p class="placeholder">Exam Duration</p>
         </div>
 
@@ -37,7 +38,6 @@
 
         <div class="control center-items">
             <select name="type_of_exam" required>
-                <option value="" selected>Type Of Exam</option>
                 <option value="descriptive">Descriptive</option>
                 <option value="test">Test</option>
                 <option value="t/f">T/F</option>
