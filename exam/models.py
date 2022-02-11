@@ -28,7 +28,7 @@ class Exam(models.Model):
     exam_url = models.URLField()
     start_time = models.DateTimeField()
     end_time = models.DateTimeField()
-    # exam_score = models.IntegerField()
+    exam_score = models.IntegerField()
 
 
 # Filling in the exam_url field
@@ -45,7 +45,7 @@ class Question(models.Model):
     option_2 = models.CharField(max_length=250)
     option_3 = models.CharField(max_length=250)
     option_4 = models.CharField(max_length=250)
-    # qs_score = models.IntegerField()
+    qs_score = models.IntegerField()
     answer = models.CharField(max_length=25, choices=QS_ANSWER)
 
 
@@ -74,7 +74,4 @@ class StudentAnswer(models.Model):
 # class AnswerSheet(models.Model):
 #     exam = models.ForeignKey(Exam, on_delete=models.CASCADE)
 #     student = models.ForeignKey(Student, on_delete=models.CASCADE)
-#     score = models.IntegerField()
-#     answered_questions = models.ManyToManyField(Question, related_name='answered_questions')
-#     wrong_questions = models.ManyToManyField(Question, related_name='wrong_questions')
-#     not_answered = models.ManyToManyField(Question, related_name='not_answered')
+#     student_answers = models.ManyToManyField(StudentAnswer, related_name='student_answer')
