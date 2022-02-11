@@ -32,6 +32,7 @@ class AddExam(View):
             type_of_exam=get_field('type_of_exam', request),
             start_time=get_field('start_time', request),
             end_time=get_field('end_time', request),
+            exam_score=get_field('exam_score', request),
         )
         obj.save()
         return redirect('exam:exam_detail', pk=obj.pk)  # Redirecting to Exam detail page
