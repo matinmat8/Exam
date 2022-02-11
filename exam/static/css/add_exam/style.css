@@ -69,8 +69,7 @@ main > form select:focus {
 
 .control {
     width: 45%;
-    gap: 30px;
-    justify-content: flex-start;
+    justify-content: space-between;
 }
 
 .control select {
@@ -83,7 +82,7 @@ main > form select:focus {
 }
 
 .control * {
-    width: 200px;
+    width: 45%;
     height: 45px;
 }
 

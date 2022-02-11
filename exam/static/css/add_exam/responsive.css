@@ -6,13 +6,4 @@
     main > form > * {
         width: 80% !important;
     }
-
-    .control {
-        justify-content: space-between;
-        gap: 0;
-    }
-
-    .control * {
-        width: 45%;
-    }
 }
