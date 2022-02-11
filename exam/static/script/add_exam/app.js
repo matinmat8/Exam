@@ -9,7 +9,7 @@ function blur () {
     this.parentNode.querySelector(".placeholder").classList.remove("active");
 }
 
-document.querySelectorAll(".input input").forEach(
+document.querySelectorAll(".input input, .date input").forEach(
     input => {
         input.addEventListener("focus", focus);
         input.addEventListener("blur", blur);
