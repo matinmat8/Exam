@@ -124,5 +124,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# Redirecting to login page if user hasn't logged in
+LOGIN_URL = 'register_login:login'
+
 LOGIN_REDIRECT_URL = 'exam:index'
 LOGOUT_REDIRECT_URL = 'register_login:login'
