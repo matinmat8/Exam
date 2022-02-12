@@ -2,6 +2,14 @@
 
 {% block content %}
     {{ object.title }}
+    {{ object.classroom }}
+    {{ object.teacher_name }}
+    {{ object.type_of_exam }}
+    {{ object.exam_url }}
+    {{ object.start_time }}
+    {{ object.end_time }}
+    {{ object.exam_score }}
+
 
     <form method="post">
         {% csrf_token %}
