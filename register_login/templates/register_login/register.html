@@ -1,11 +1,67 @@
 {% extends 'exam/base.html' %}
+{% load static %}
+
+{% block selfLink %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/inputs.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'register/css/style.css' %}">
+
+{% endblock selfLink %}
+
 
 {% block content %}
-    <div class="container-sm mt-3">
-        <form method="post">
+
+    <div class="box">
+        <img src="{% static 'register/icon/signup.svg' %}" alt="signup" draggable="false">
+
+        <form method="post" class="center-items">
             {% csrf_token %}
-            {{ form.as_p }}
-            <button class="btn btn-dark" type="submit"> Sign Up </button>
+
+            <div class="input">
+                <input type="text" name="username" maxlength="150" required>
+                <p class="placeholder">Username</p>
+            </div>
+
+            <div class="input">
+                <input type="text" name="first_name" maxlength="30">
+                <p class="placeholder">First Name</p>
+            </div>
+            
+            <div class="input">
+                <input type="text" name="last_name" maxlength="30">
+                <div class="placeholder">Last Name</div>
+            </div>
+
+            <div class="input">
+                <input type="email" name="email" maxlength="254" required>
+                <p class="placeholder">Email</p>
+            </div>
+
+            <div class="input">
+                <input type="password" name="password1" required>
+                <p class="placeholder">Password</p>
+            </div>
+
+            <div class="input">
+                <input type="password" name="password2" required>
+                <p class="placeholder">Retry Password</p>
+            </div>
+
+            <div class="show-password center-items">
+                <input type="checkbox" autocomplete="off">
+                <p>Show Password</p>
+            </div>
+
+            <button>Sign Up</button>
         </form>
     </div>
+
 {% endblock %}
+
+
+{% block selfScript %}
+
+    <script type="text/javascript" src="{% static 'script/password.js' %}"></script>
+    <script type="text/javascript" src="{% static 'script/add_exam/app.js' %}"></script>
+
+{% endblock selfScript %}
