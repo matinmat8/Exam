@@ -31,13 +31,17 @@
             <div class="user center-items">
                 {% if user.is_authenticated %}
 
-                  <a href="{% url 'register_login:logout' %}">LogOut</a>
+                  <a href="{% url 'register_login:logout' %}">Log out</a>
 
                 {% else %}
 
-                  <a href="{% url 'register_login:login' %}">Login</a>
+                  <a href="{% url 'register_login:login' %}">Log in</a>
 
                 {% endif %}
+
+                /
+
+                <a href="{% url 'register_login:register' %}">Sign up</a>
             </div>
 
         </nav>
