@@ -6,7 +6,7 @@
 <head>
   <meta charset="UTF-8">
   <title>{% block title %}Title{% endblock %}</title>
-  <link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'css/responsive.css' %}">
 
   {% block selfLink %}{% endblock selfLink %}
@@ -49,7 +49,7 @@
         <a href="{% url 'exam:exam_list' %}">Exams</a>
     </aside>
 
-    <main>
+    <main class="center-items">
         {% block content %}
         
         <!-- <h2>Exam Online System</h2> -->

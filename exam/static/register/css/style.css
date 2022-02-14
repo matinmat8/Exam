@@ -1,0 +1,53 @@
+main {
+    padding-bottom: 50px;
+}
+
+main a {
+    color: var(--title-color);
+}
+
+main a:hover {
+    text-decoration: underline;
+}
+
+.box {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    width: 400px;
+}
+
+.box > img {
+    width: 290px;
+    height: 290px;
+    align-self: center;
+}
+
+.box form {
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.box form .input {
+    width: 100%;
+}
+
+.box form button,
+.box form .show-password {
+    align-self: flex-start;
+}
+
+.box form button {
+    width: 200px;
+    height: 40px;
+    background-color: var(--success-color);
+}
+
+.show-password {
+    gap: 10px;
+}
+
+.show-password input {
+    cursor: pointer;
+}

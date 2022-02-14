@@ -1,16 +1,54 @@
 {% extends 'exam/base.html' %}
-{% block title %}login{% endblock %}
+{% load static %}
+
+{% block selfLink %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/inputs.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'register/css/style.css' %}">
+
+{% endblock selfLink %}
+
+{% block title %}Login{% endblock %}
 
 {% block content %}
 
-  <div class="container-sm">
-    <h1>Log in</h1>
-    <form method="post">
-      {% csrf_token %}
-      {{ form.as_p }}
-      <button type="submit" class="btn btn-dark">Login</button>
-      <p>Don't have an account? Create One <a href="{% url 'register_login:register' %}"> here </a></p>
-      <p><a href="{% url 'register_login:reset_password' %}"> do you forgot password? </a></p>
-    </form>
-  </div>
+    <div class="box center-items">
+        <img src="{% static 'register/icon/signup.svg' %}" alt="register" draggable="false">
+
+        <form method="post" class="center-items">
+            {% csrf_token %}
+    
+            <div class="input">
+                <input type="text" name="username" required>
+                <p class="placeholder">Username</p>
+            </div>
+    
+            <div class="input">
+                <input type="password" name="password" required>
+                <p class="placeholder">Password</p>
+            </div>
+
+            <div class="show-password center-items">
+                <input type="checkbox" autocomplete="off">
+                <p>Show Password</p>
+            </div>
+    
+            <button>Login</button>
+        </form>
+    
+        <p>
+            Don't have an account? Create One
+            <a href="{% url 'register_login:register' %}">here</a>
+        </p>
+    
+        <a href="{% url 'register_login:reset_password' %}">do you forgot password?</a>
+    </div>
+
 {% endblock %}
+
+{% block selfScript %}
+
+    <script type="text/javascript" src="{% static 'script/password.js' %}"></script>
+    <script type="text/javascript" src="{% static 'script/add_exam/app.js' %}"></script>
+
+{% endblock selfScript %}
