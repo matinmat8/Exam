@@ -23,12 +23,6 @@ def register(request):
 
             # Login the user with login
             login(request, user)
-            return redirect('register_login:index')
+            return redirect('exam:index')
 
-    else:
-
-        # if request method is get
-        # create form by with get request
-        form = UserRegister()
-
-    return render(request, 'register_login/register.html', {'form': form})
+    return render(request, 'register_login/register.html')
