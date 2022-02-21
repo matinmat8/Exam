@@ -14,6 +14,7 @@ def index(request):
     return render(request, 'exam/base.html')
 
 
+@method_decorator(login_required, name='dispatch')
 class AddExam(View):
     model = Exam
     template_name = 'exam/add_exam.html'
@@ -49,10 +50,6 @@ class ExamList(ListView):
         return obj.filter(user=user)
 
 
+@method_decorator(login_required, name='dispatch')
 class ExamDetail(DetailView):
     model = Exam
-
-    # def get_context_data(self, **kwargs):
-    #     context = super().get_context_data()
-    #     context['form'] = AddQsForm()
-    #     return context
