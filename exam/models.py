@@ -53,20 +53,22 @@ class Student(models.Model):
     exam = models.ForeignKey(Exam, on_delete=models.CASCADE)
     first_name = models.CharField(max_length=250)
     last_name = models.CharField(max_length=250)
-    email = models.EmailField()
+    email = models.EmailField(null=True, blank=True)
+
+    # total exam score for student
     score = models.IntegerField()
 
 
 class StudentAnswer(models.Model):
-    qs = models.ForeignKey(Question, on_delete=models.CASCADE)
+    exam = models.ForeignKey(Exam, on_delete=models.CASCADE)
+    qs = models.ManyToManyField(Question, related_name='qs')
     stu = models.ForeignKey(Student, on_delete=models.CASCADE)
-    answer = models.CharField(max_length=15, choices=QS_ANSWER, blank=True, null=True)
-    correct_or_not = models.BooleanField(default=False)
+    # answer = models.CharField(max_length=15, choices=QS_ANSWER, blank=True, null=True)
 
 
-# @receiver(post_save, sender=StuQs)
+# @receiver(post_save, sender=StudentAnswer)
 # def add_score(sender, instance, **kwargs):
-#     if instance.correct_or_not:
+#     if instance.answer == instance.qs.answer:
 #         instance.stu.score += instance.qs.qs_score
 #     # Student.score += Question.qs_score
 
