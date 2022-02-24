@@ -3,6 +3,7 @@ from django.db import models
 
 from django.dispatch import receiver
 from django.db.models.signals import post_save
+from django.urls import reverse
 
 TYPE_OF_TEST = (
     ('Descriptive', 'descriptive'),
@@ -29,6 +30,9 @@ class Exam(models.Model):
     start_time = models.DateTimeField()
     end_time = models.DateTimeField()
     exam_score = models.IntegerField()
+
+    def get_absolute_url(self):
+        return reverse('exam:exam_detail', kwargs={'pk': self.pk})
 
 
 # Filling in the exam_url field
