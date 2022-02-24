@@ -1,18 +1,32 @@
 {% extends 'exam/base.html' %}
+{% load static %}
+
+{% block selfLink %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/list/style.css' %}">
+
+{% endblock selfLink %}
+
 
 {% block content %}
-    {{ object.title }}
-    {{ object.classroom }}
-    {{ object.teacher_name }}
-    {{ object.type_of_exam }}
-    {{ object.exam_url }}
-    {{ object.start_time }}
-    {{ object.end_time }}
-    {{ object.exam_score }}
 
+    <div id="details">
+        <h1>{{ object.title }}</h1>
+    
+        <div id="info">
+            <b>Classroom: {{ object.classroom }}</b>
+            <b>Teacher Name: {{ object.teacher_name }}</b>
+            <b>Exam Type: {{ object.type_of_exam }}</b>
+            <b>Exam Link: {{ object.exam_url }}</b>
+            <b>Start Time: {{ object.start_time }}</b>
+            <b>End Time: {{ object.end_time }}</b>
+            <b>Exam Score: {{ object.exam_score }}</b>
+        </div>
+    </div>
 
-    <form method="post">
+    <!-- exam form ===> work -->
+    <!-- <form method="post">
         {% csrf_token %}
         <input type="submit" value="Save">
-    </form>
+    </form> -->
 {% endblock %}

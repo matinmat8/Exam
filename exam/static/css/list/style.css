@@ -1,0 +1,12 @@
+main {
+	padding: 30px 20px;
+}
+
+#info > b {
+	display: block;
+	margin: 10px 0;
+}
+
+#details {
+	width: 100%;
+}
