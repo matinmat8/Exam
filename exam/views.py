@@ -41,7 +41,7 @@ class AddExam(View):
             obj.save()
             return redirect('exam:exam_detail', pk=obj.pk)  # Redirecting to Exam detail page
         except:
-            messages.add_message(request, messages.ERROR, message="There ware some errors occurred during the adding "
+            messages.add_message(request, messages.ERROR, message="There were some errors occurred during the adding "
                                                                   "exam, please try agin!")
             return HttpResponse('There is an error! please try again!')
 
